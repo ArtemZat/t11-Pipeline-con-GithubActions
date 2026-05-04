@@ -1,7 +1,7 @@
 describe('TodoMVC', () => {
   // ejecuta antes de cada prueba
   beforeEach(() => {
-     cy.visit('https://example.cypress.io/todo')
+     cy.visit('https://todomvc-app-for-testing.surge.sh')
   })
   
   it('Crear tarea', () => {
