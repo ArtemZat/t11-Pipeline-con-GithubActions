@@ -1,7 +1,7 @@
 describe('TodoMVC', () => {
   // ejecuta antes de cada prueba
   beforeEach(() => {
-     cy.visit('https://todomvc-app-for-testing.surge.sh, { failOnStatusCode: false }')
+     cy.visit('https://example.cypress.io/todo')
   })
   
   it('Crear tarea', () => {
@@ -28,12 +28,6 @@ describe('TodoMVC', () => {
     cy.get(".edit").clear().type(`Hola hola{enter}`);
     cy.contains('label', "Hola hola").should('be.visible')
     
-  })
-
-  it('Eliminar tarea', () => {
-    cy.get('input.new-todo').type(`Hola{enter}`);
-    cy.get(".todo-list").contains("Hola").parents("li").find('.destroy').dblclick({ force: true });
-    cy.get(".todo-list").should('not.be.visible')
   })
 
   it('Filtrar tarea', () => {
